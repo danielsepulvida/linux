@@ -1,0 +1,20 @@
+# Global parameters
+[global]
+	dns forwarder = 10.20.1.1
+	netbios name = SAMBA01
+	realm = EXAMPLE.LOCAL
+	server role = active directory domain controller
+	workgroup = EXAMPLE
+	idmap_ldb:use rfc2307 = yes
+	winbind enum users = yes
+	winbind enum groups = yes
+	template shell = /bin/bash
+
+
+[netlogon]
+	path = /var/lib/samba/sysvol/example.local/scripts
+	read only = No
+
+[sysvol]
+	path = /var/lib/samba/sysvol
+	read only = No
